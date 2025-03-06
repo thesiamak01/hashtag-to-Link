@@ -1,17 +1,37 @@
 # Hashtag to Link Converter
 
-A PHP function to convert hashtags in a text into clickable links. This function supports both **Persian** and **English** hashtags and allows for extensive customization of the generated links.
+![Banner](https://raw.githubusercontent.com/thesiamak01/hashtag-to-Link/refs/heads/main/cover.png)
+
+
+A PHP function to convert hashtags in a text into clickable links. This function supports both **Persian**, **Arabic** and **English** hashtags and allows for extensive customization of the generated links.
 
 ---
 
 ## Features
 
-- **Supports Persian and English Hashtags**: Works with Persian, English, numbers, `-`, and `_`.
+- **Supports Persian, Arabic and English Hashtags**: Works with Persian, English, numbers, `-`, and `_`.
 - **Customizable Links**: Add `class`, `target`, `rel`, `id`, `title`, `data-*`, and `onclick` attributes to the links.
 - **Secure**: Uses `htmlspecialchars` and `urlencode` to prevent XSS and ensure proper URL formatting.
 - **Flexible**: Easily extendable to support additional attributes or functionality.
 
 ---
+
+## Example : Basic Usage
+
+```php
+include_once "hashtagToLink.php";
+
+$text = "This is a test text #example #test_tag and #another-tag.";
+
+$linkedText = hashtagToLink($text, 'https://example.com/tag/', [
+    'class' => 'hashtag-link',
+    'target' => '_blank',
+    'rel' => 'nofollow',
+    'title' => 'Go to hashtag page',
+]);
+
+echo $linkedText;
+```
 
 ## Parameters
 
